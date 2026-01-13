@@ -10,7 +10,10 @@ import { publicApi, createAuthenticatedClient } from "@/lib/api-client";
 
 const client = createAuthenticatedClient();
 
-type User = InferResponseType<typeof client.users.me.$get, 200>;
+type User = Extract<
+  InferResponseType<typeof client.users.me.$get>,
+  { email: string }
+>;
 
 type LoginRequest = InferRequestType<typeof publicApi.auth.login.$post>["json"];
 
@@ -58,7 +61,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       const userData = await res.json();
-      setUser(userData);
+      setUser(userData as User);
     } catch (err) {
       console.error("Error verificando sesión:", err);
       logout();
@@ -89,13 +92,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       const data = await res.json();
 
-      const { token, user } = data as {
-        token: string;
-        user: User;
-      };
-
-      localStorage.setItem("auth_token", token);
-      setUser(user);
+      if ("token" in data) {
+        localStorage.setItem("auth_token", data.token);
+        await checkAuth();
+      }
     } catch (err) {
       if (!error) setError("Error de conexión");
       throw err;
