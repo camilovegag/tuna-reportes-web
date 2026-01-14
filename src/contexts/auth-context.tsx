@@ -97,7 +97,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         await checkAuth();
       }
     } catch (err) {
-      if (!error) setError("Error de conexión");
+      setError(err instanceof Error ? err.message : "Error de conexión");
       throw err;
     } finally {
       setIsLoading(false);
@@ -122,7 +122,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       await login({ email: data.email, password: data.password });
     } catch (err) {
-      if (!error) setError("Error al registrarse");
+      setError(err instanceof Error ? err.message : "Error al registrarse");
       throw err;
     } finally {
       setIsLoading(false);
