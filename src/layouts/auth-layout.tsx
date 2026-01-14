@@ -17,7 +17,7 @@ export function AuthLayout() {
       </main>
 
       <aside className="hidden lg:flex lg:w-1/2 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary via-primary to-primary/80" />
 
         <div className="absolute top-1/4 -right-20 w-80 h-80 rounded-full bg-primary-foreground/10 blur-3xl" />
         <div className="absolute bottom-1/4 -left-20 w-60 h-60 rounded-full bg-primary-foreground/5 blur-2xl" />
