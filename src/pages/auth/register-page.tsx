@@ -65,7 +65,7 @@ export function RegisterPage() {
               label="Código de vinculación"
               type="text"
               placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-              description="Solicita este código al administrador de tu organización"
+              description="Solicita este código al administrador de Tuna Reportes"
             />
           </div>
 
