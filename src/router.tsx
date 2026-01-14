@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router";
-import { ProtectedRoute, GuestRoute } from "./components/route-guards";
-import { AppLayout } from "./layouts/app-layout";
-import { AuthLayout } from "./layouts/auth-layout";
-import { HomePage } from "./pages/home-page";
-import { LoginPage } from "./pages/auth/login-page";
-import { RegisterPage } from "./pages/auth/register-page";
+import { ProtectedRoute, GuestRoute } from "@/components/route-guards";
+import { AppLayout } from "@/layouts/app-layout";
+import { AuthLayout } from "@/layouts/auth-layout";
+import { HomePage } from "@/pages/home-page";
+import { LoginPage } from "@/pages/auth/login-page";
+import { RegisterPage } from "@/pages/auth/register-page";
 
 export const router = createBrowserRouter([
   // Protected routes (require authentication)
