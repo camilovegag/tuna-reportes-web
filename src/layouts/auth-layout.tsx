@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { H1, Text, TextLarge } from "@/components/ui/typography";
 
 export function AuthLayout() {
   return (
@@ -23,24 +24,32 @@ export function AuthLayout() {
         <div className="absolute bottom-1/4 -left-20 w-60 h-60 rounded-full bg-primary-foreground/5 blur-2xl" />
 
         <div className="relative z-10 flex flex-col justify-center p-12 text-primary-foreground">
-          <h1 className="text-4xl font-bold mb-4">Tuna Reportes</h1>
-          <p className="text-primary-foreground/80 max-w-md text-sm">
+          <H1 className="text-4xl mb-4 text-primary-foreground">
+            Tuna Reportes
+          </H1>
+          <TextLarge className="max-w-md text-primary-foreground/80">
             Gestiona asistencias y eventos de la Tuna Universidad de La Sabana
             de manera simple y eficiente.
-          </p>
+          </TextLarge>
 
-          <ul className="mt-4 flex flex-col gap-3 text-primary-foreground/70 text-sm">
+          <ul className="mt-4 flex flex-col gap-3">
             <li className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground/50" />
-              Control de asistencia en tiempo real
+              <Text className="text-primary-foreground/70">
+                Control de asistencia en tiempo real
+              </Text>
             </li>
             <li className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground/50" />
-              Reportes automáticos
+              <Text className="text-primary-foreground/70">
+                Reportes automáticos
+              </Text>
             </li>
             <li className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground/50" />
-              Gestión de integrantes
+              <Text className="text-primary-foreground/70">
+                Gestión de integrantes
+              </Text>
             </li>
           </ul>
         </div>
